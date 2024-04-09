@@ -1,0 +1,19 @@
+taskId: 00085-even-odd-add
+target: >-
+  Given a non-empty list of integers lst. add the even elements that are at odd
+  indices..
+
+
+      Examples:
+          add([4, 2, 6, 7]) ==> 2
+examples: []
+tests:
+  - input: '[4, 88]'
+    output: '88'
+  - input: '[4, 5, 6, 7, 2, 122]'
+    output: '122'
+  - input: '[4, 0, 6, 7]'
+    output: '0'
+  - input: '[4, 4, 6, 8]'
+    output: '12'
+difficulty: unclassified

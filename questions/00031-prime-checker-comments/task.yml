@@ -1,0 +1,45 @@
+taskId: 00031-prime-checker-comments
+target: 'Return true if a given number is prime, and false otherwise.'
+examples:
+  - usageExample: is_prime(6)
+    output: 'False'
+  - usageExample: is_prime(101)
+    output: 'True'
+  - usageExample: is_prime(11)
+    output: 'True'
+  - usageExample: is_prime(13441)
+    output: 'True'
+  - usageExample: is_prime(61)
+    output: 'True'
+  - usageExample: is_prime(4)
+    output: 'False'
+  - usageExample: is_prime(1)
+    output: 'False'
+tests:
+  - input: '6'
+    output: 'False'
+  - input: '101'
+    output: 'True'
+  - input: '11'
+    output: 'True'
+  - input: '13441'
+    output: 'True'
+  - input: '61'
+    output: 'True'
+  - input: '4'
+    output: 'False'
+  - input: '1'
+    output: 'False'
+  - input: '5'
+    output: 'True'
+  - input: '11'
+    output: 'True'
+  - input: '17'
+    output: 'True'
+  - input: 5 * 17
+    output: 'False'
+  - input: 11 * 7
+    output: 'False'
+  - input: 13441 * 19
+    output: 'False'
+difficulty: unclassified

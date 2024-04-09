@@ -1,0 +1,19 @@
+taskId: 00059-prime-factor-output
+target: Return the largest prime factor of n. Assume n > 1 and is not a prime.
+examples:
+  - usageExample: largest_prime_factor(13195)
+    output: '29'
+  - usageExample: largest_prime_factor(2048)
+    output: '2'
+tests:
+  - input: '15'
+    output: '5'
+  - input: '27'
+    output: '3'
+  - input: '63'
+    output: '7'
+  - input: '330'
+    output: '11'
+  - input: '13195'
+    output: '29'
+difficulty: unclassified

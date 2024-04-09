@@ -1,0 +1,21 @@
+taskId: 00074-total-match-characters
+tests:
+  - input: '[], []'
+    output: '[]'
+  - input: '[''hi'', ''admin''], [''hi'', ''hi'']'
+    output: '[''hi'', ''hi'']'
+  - input: '[''hi'', ''admin''], [''hi'', ''hi'', ''admin'', ''project'']'
+    output: '[''hi'', ''admin'']'
+  - input: '[''4''], [''1'', ''2'', ''3'', ''4'', ''5'']'
+    output: '[''4'']'
+  - input: '[''hi'', ''admin''], [''hI'', ''Hi'']'
+    output: '[''hI'', ''Hi'']'
+  - input: '[''hi'', ''admin''], [''hI'', ''hi'', ''hi'']'
+    output: '[''hI'', ''hi'', ''hi'']'
+  - input: '[''hi'', ''admin''], [''hI'', ''hi'', ''hii'']'
+    output: '[''hi'', ''admin'']'
+  - input: '[], [''this'']'
+    output: '[]'
+  - input: '[''this''], []'
+    output: '[]'
+difficulty: unclassified

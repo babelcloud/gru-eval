@@ -1,0 +1,40 @@
+taskId: 00111-histogram-function-comments
+target: >-
+  Given a string representing a space separated lowercase letters, return a
+  dictionary
+      of the letter with the most repetition and containing the corresponding count.
+      If several letters have the same occurrence, return all of them.
+      
+      Example:
+      histogram('a b c') == {'a': 1, 'b': 1, 'c': 1}
+      histogram('a b b a') == {'a': 2, 'b': 2}
+      histogram('a b c a b') == {'a': 2, 'b': 2}
+      histogram('b b b b a') == {'b': 4}
+      histogram('') == {}
+examples: []
+tests:
+  - input: '''a b b a'''
+    output: '{''a'':2,''b'': 2}, "This prints if this assert fails 1 (good for debugging!)"'
+  - input: '''a b c a b'''
+    output: >-
+      {'a': 2, 'b': 2}, "This prints if this assert fails 2 (good for
+      debugging!)"
+  - input: '''a b c d g'''
+    output: >-
+      {'a': 1, 'b': 1, 'c': 1, 'd': 1, 'g': 1}, "This prints if this assert
+      fails 3 (good for debugging!)"
+  - input: '''r t g'''
+    output: >-
+      {'r': 1,'t': 1,'g': 1}, "This prints if this assert fails 4 (good for
+      debugging!)"
+  - input: '''b b b b a'''
+    output: '{''b'': 4}, "This prints if this assert fails 5 (good for debugging!)"'
+  - input: '''r t g'''
+    output: >-
+      {'r': 1,'t': 1,'g': 1}, "This prints if this assert fails 6 (good for
+      debugging!)"
+  - input: ''''''
+    output: '{}, "This prints if this assert fails 7 (also good for debugging!)"'
+  - input: '''a'''
+    output: '{''a'': 1}, "This prints if this assert fails 8 (also good for debugging!)"'
+difficulty: unclassified

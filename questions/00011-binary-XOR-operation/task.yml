@@ -1,0 +1,15 @@
+taskId: 00011-binary-XOR-operation
+target: |-
+  Input are two strings a and b consisting only of 1s and 0s.
+      Perform binary XOR on these inputs and return result also as a string.
+examples:
+  - usageExample: 'string_xor(''010'', ''110'')'
+    output: '''100'''
+tests:
+  - input: '''111000'', ''101010'''
+    output: '''010010'''
+  - input: '''1'', ''1'''
+    output: '''0'''
+  - input: '''0101'', ''0000'''
+    output: '''0101'''
+difficulty: unclassified

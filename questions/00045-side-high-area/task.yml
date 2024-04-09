@@ -1,0 +1,13 @@
+taskId: 00045-side-high-area
+target: Given length of a side and high return area for a triangle.
+examples:
+  - usageExample: 'triangle_area(5, 3)'
+    output: '7.5'
+tests:
+  - input: '5, 3'
+    output: '7.5'
+  - input: '2, 2'
+    output: '2.0'
+  - input: '10, 8'
+    output: '40.0'
+difficulty: unclassified

@@ -1,0 +1,32 @@
+taskId: 00075-is-multiply-prime说明
+target: >-
+  Write a function that returns true if the given number is the multiplication
+  of 3 prime numbers
+      and false otherwise.
+      Knowing that (a) is less then 100. 
+      Example:
+      is_multiply_prime(30) == True
+      30 = 2 * 3 * 5
+examples: []
+tests:
+  - input: '5'
+    output: 'False'
+  - input: '30'
+    output: 'True'
+  - input: '8'
+    output: 'True'
+  - input: '10'
+    output: 'False'
+  - input: '125'
+    output: 'True'
+  - input: 3 * 5 * 7
+    output: 'True'
+  - input: 3 * 6 * 7
+    output: 'False'
+  - input: 9 * 9 * 9
+    output: 'False'
+  - input: 11 * 9 * 9
+    output: 'False'
+  - input: 11 * 13 * 7
+    output: 'True'
+difficulty: unclassified

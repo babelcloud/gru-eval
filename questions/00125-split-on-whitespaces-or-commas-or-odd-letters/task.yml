@@ -1,0 +1,19 @@
+taskId: 00125-split-on-whitespaces-or-commas-or-odd-letters
+tests:
+  - input: '"Hello world!"'
+    output: '["Hello","world!"]'
+  - input: '"Hello,world!"'
+    output: '["Hello","world!"]'
+  - input: '"Hello world,!"'
+    output: '["Hello","world,!"]'
+  - input: '"Hello,Hello,world !"'
+    output: '["Hello,Hello,world","!"]'
+  - input: '"abcdef"'
+    output: '3'
+  - input: '"aaabb"'
+    output: '2'
+  - input: '"aaaBb"'
+    output: '1'
+  - input: '""'
+    output: '0'
+difficulty: unclassified

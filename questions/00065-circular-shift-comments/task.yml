@@ -1,0 +1,22 @@
+taskId: 00065-circular-shift-comments
+target: |-
+  Circular shift the digits of the integer x, shift the digits right by shift
+      and return the result as a string.
+      If shift > number of digits, return digits reversed.
+examples:
+  - usageExample: 'circular_shift(12, 1)'
+    output: '"21"'
+  - usageExample: 'circular_shift(12, 2)'
+    output: '"12"'
+tests:
+  - input: '100, 2'
+    output: '"001"'
+  - input: '12, 2'
+    output: '"12"'
+  - input: '97, 8'
+    output: '"79"'
+  - input: '12, 1'
+    output: '"21", "This prints if this assert fails 1 (good for debugging!)"'
+  - input: '11, 101'
+    output: '"11", "This prints if this assert fails 2 (also good for debugging!)"'
+difficulty: unclassified

@@ -1,0 +1,15 @@
+taskId: 00023-return-length-string
+target: Return length of given string
+examples:
+  - usageExample: strlen('')
+    output: '0'
+  - usageExample: strlen('abc')
+    output: '3'
+tests:
+  - input: ''''''
+    output: '0'
+  - input: '''x'''
+    output: '1'
+  - input: '''asdasnakj'''
+    output: '9'
+difficulty: unclassified

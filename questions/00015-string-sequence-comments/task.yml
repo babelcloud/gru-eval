@@ -1,0 +1,17 @@
+taskId: 00015-string-sequence-comments
+target: >-
+  Return a string containing space-delimited numbers starting from 0 upto n
+  inclusive.
+examples:
+  - usageExample: string_sequence(0)
+    output: '''0'''
+  - usageExample: string_sequence(5)
+    output: '''0 1 2 3 4 5'''
+tests:
+  - input: '0'
+    output: '''0'''
+  - input: '3'
+    output: '''0 1 2 3'''
+  - input: '10'
+    output: '''0 1 2 3 4 5 6 7 8 9 10'''
+difficulty: unclassified

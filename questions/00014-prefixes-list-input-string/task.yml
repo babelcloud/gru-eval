@@ -1,0 +1,13 @@
+taskId: 00014-prefixes-list-input-string
+target: Return list of all prefixes from shortest to longest of the input string
+examples:
+  - usageExample: all_prefixes('abc')
+    output: '[''a'', ''ab'', ''abc'']'
+tests:
+  - input: ''''''
+    output: '[]'
+  - input: '''asdfgh'''
+    output: '[''a'', ''as'', ''asd'', ''asdf'', ''asdfg'', ''asdfgh'']'
+  - input: '''WWW'''
+    output: '[''W'', ''WW'', ''WWW'']'
+difficulty: unclassified

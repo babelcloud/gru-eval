@@ -1,0 +1,33 @@
+taskId: 00051-vowels-removal-file
+target: >-
+  remove_vowels is a function that takes string and returns string without
+  vowels.
+examples:
+  - usageExample: remove_vowels('')
+    output: ''''''
+  - usageExample: remove_vowels("abcdef\nghijklm")
+    output: '''bcdf\nghjklm'''
+  - usageExample: remove_vowels('abcdef')
+    output: '''bcdf'''
+  - usageExample: remove_vowels('aaaaa')
+    output: ''''''
+  - usageExample: remove_vowels('aaBAA')
+    output: '''B'''
+  - usageExample: remove_vowels('zbcd')
+    output: '''zbcd'''
+tests:
+  - input: ''''''
+    output: ''''''
+  - input: '"abcdef\nghijklm"'
+    output: '''bcdf\nghjklm'''
+  - input: '''fedcba'''
+    output: '''fdcb'''
+  - input: '''eeeee'''
+    output: ''''''
+  - input: '''acBAA'''
+    output: '''cB'''
+  - input: '''EcBOO'''
+    output: '''cB'''
+  - input: '''ybcd'''
+    output: '''ybcd'''
+difficulty: unclassified

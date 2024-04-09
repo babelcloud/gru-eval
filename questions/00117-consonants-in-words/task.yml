@@ -1,0 +1,36 @@
+taskId: 00117-consonants-in-words
+target: |-
+  Given a string s and a natural number n, you have been tasked to implement 
+      a function that returns a list of all words from string s that contain exactly 
+      n consonants, in order these words appear in the string s.
+      If the string s is empty then the function should return an empty list.
+      Note: you may assume the input string contains only letters and spaces.
+      Examples:
+      select_words("Mary had a little lamb", 4) ==> ["little"]
+      select_words("Mary had a little lamb", 3) ==> ["Mary", "lamb"]
+      select_words("simple white space", 2) ==> []
+      select_words("Hello world", 4) ==> ["world"]
+      select_words("Uncle sam", 3) ==> ["Uncle"]
+examples: []
+tests:
+  - input: '"Mary had a little lamb", 4'
+    output: >-
+      ["little"], "First test error: " + str(candidate("Mary had a little lamb",
+      4))      
+  - input: '"Mary had a little lamb", 3'
+    output: >-
+      ["Mary", "lamb"], "Second test error: " + str(candidate("Mary had a little
+      lamb", 3))  
+  - input: '"simple white space", 2'
+    output: '[], "Third test error: " + str(candidate("simple white space", 2))      '
+  - input: '"Hello world", 4'
+    output: '["world"], "Fourth test error: " + str(candidate("Hello world", 4))  '
+  - input: '"Uncle sam", 3'
+    output: '["Uncle"], "Fifth test error: " + str(candidate("Uncle sam", 3))'
+  - input: '"", 4'
+    output: '[], "1st edge test error: " + str(candidate("", 4))'
+  - input: '"a b c d e f", 1'
+    output: >-
+      ["b", "c", "d", "f"], "2nd edge test error: " + str(candidate("a b c d e
+      f", 1))
+difficulty: unclassified

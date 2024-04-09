@@ -1,0 +1,21 @@
+taskId: 00055-fibonacci-number-comments
+target: Return n-th Fibonacci number.
+examples:
+  - usageExample: fib(10)
+    output: '55'
+  - usageExample: fib(1)
+    output: '1'
+  - usageExample: fib(8)
+    output: '21'
+tests:
+  - input: '10'
+    output: '55'
+  - input: '1'
+    output: '1'
+  - input: '8'
+    output: '21'
+  - input: '11'
+    output: '89'
+  - input: '12'
+    output: '144'
+difficulty: unclassified

@@ -1,0 +1,30 @@
+taskId: 00161-change-letter-case
+target: |-
+  You are given a string s.
+      if s[i] is a letter, reverse its case from lower to upper or vise versa, 
+      otherwise keep it as it is.
+      If the string contains no letters, reverse the string.
+      The function should return the resulted string.
+      Examples
+      solve("1234") = "4321"
+      solve("ab") = "AB"
+      solve("#a@C") = "#A@c"
+examples: []
+tests:
+  - input: '"AsDf"'
+    output: '"aSdF"'
+  - input: '"1234"'
+    output: '"4321"'
+  - input: '"ab"'
+    output: '"AB"'
+  - input: '"#a@C"'
+    output: '"#A@c"'
+  - input: '"#AsdfW^45"'
+    output: '"#aSDFw^45"'
+  - input: '"#6@2"'
+    output: '"2@6#"'
+  - input: '"#$a^D"'
+    output: '"#$A^d"'
+  - input: '"#ccc"'
+    output: '"#CCC"'
+difficulty: unclassified
