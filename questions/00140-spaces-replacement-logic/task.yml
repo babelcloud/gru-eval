@@ -1,0 +1,29 @@
+taskId: 00140-spaces-replacement-logic
+target: |-
+  Given a string text, replace all spaces in it with underscores, 
+      and if a string has more than 2 consecutive spaces, 
+      then replace all consecutive spaces with - 
+      
+      fix_spaces("Example") == "Example"
+      fix_spaces("Example 1") == "Example_1"
+      fix_spaces(" Example 2") == "_Example_2"
+      fix_spaces(" Example   3") == "_Example-3"
+examples: []
+tests:
+  - input: '"Example"'
+    output: '"Example", "This prints if this assert fails 1 (good for debugging!)"'
+  - input: '"Mudasir Hanif "'
+    output: >-
+      "Mudasir_Hanif_", "This prints if this assert fails 2 (good for
+      debugging!)"
+  - input: '"Yellow Yellow  Dirty  Fellow"'
+    output: >-
+      "Yellow_Yellow__Dirty__Fellow", "This prints if this assert fails 3 (good
+      for debugging!)"
+  - input: '"Exa   mple"'
+    output: '"Exa-mple", "This prints if this assert fails 4 (good for debugging!)"'
+  - input: '"   Exa 1 2 2 mple"'
+    output: >-
+      "-Exa_1_2_2_mple", "This prints if this assert fails 4 (good for
+      debugging!)"
+difficulty: unclassified

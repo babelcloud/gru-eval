@@ -1,0 +1,7 @@
+taskId: 00038-encode-cyclic-comments
+target: returns encoded string by cycling groups of three characters.
+examples: []
+tests:
+  - input: encoded_str
+    output: str
+difficulty: unclassified

@@ -1,0 +1,15 @@
+taskId: 00010-find-palindrome-algorithm
+target: Test if given string is a palindrome
+examples: []
+tests:
+  - input: ''''''
+    output: ''''''
+  - input: '''x'''
+    output: '''x'''
+  - input: '''xyz'''
+    output: '''xyzyx'''
+  - input: '''xyx'''
+    output: '''xyx'''
+  - input: '''jerry'''
+    output: '''jerryrrej'''
+difficulty: unclassified

@@ -1,0 +1,12 @@
+taskId: 00004-mean-absolute-deviation-docs
+target: |-
+  For a given list of input numbers, calculate Mean Absolute Deviation
+      around the mean of this dataset.
+      Mean Absolute Deviation is the average absolute difference between each
+      element and a centerpoint (mean in this case):
+      MAD = average | x - x_mean |
+examples:
+  - usageExample: 'mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])'
+    output: '1.0'
+tests: []
+difficulty: unclassified

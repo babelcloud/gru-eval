@@ -1,0 +1,17 @@
+taskId: 00006-nested-parentheses-levels
+target: >-
+  Input to this function is a string represented multiple groups for nested
+  parentheses separated by spaces.
+      For each of the group, output the deepest level of nesting of parentheses.
+      E.g. (()()) has maximum two levels of nesting while ((())) has three.
+examples:
+  - usageExample: parse_nested_parens('(()()) ((())) () ((())()())')
+    output: '[2, 3, 1, 3]'
+tests:
+  - input: '''(()()) ((())) () ((())()())'''
+    output: '[2, 3, 1, 3]'
+  - input: '''() (()) ((())) (((())))'''
+    output: '[1, 2, 3, 4]'
+  - input: '''(()(())((())))'''
+    output: '[4]'
+difficulty: unclassified

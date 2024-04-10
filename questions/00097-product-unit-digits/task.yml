@@ -1,0 +1,29 @@
+taskId: 00097-product-unit-digits
+target: |-
+  Complete the function that takes two integers and returns 
+      the product of their unit digits.
+      Assume the input is always valid.
+      Examples:
+      multiply(148, 412) should return 16.
+      multiply(19, 28) should return 72.
+      multiply(2020, 1851) should return 0.
+      multiply(14,-15) should return 20.
+examples: []
+tests:
+  - input: '148, 412'
+    output: '16, "First test error: " + str(candidate(148, 412))                    '
+  - input: '19, 28'
+    output: '72, "Second test error: " + str(candidate(19, 28))           '
+  - input: '2020, 1851'
+    output: '0, "Third test error: " + str(candidate(2020, 1851))'
+  - input: '14,-15'
+    output: '20, "Fourth test error: " + str(candidate(14,-15))      '
+  - input: '76, 67'
+    output: '42, "Fifth test error: " + str(candidate(76, 67))      '
+  - input: '17, 27'
+    output: '49, "Sixth test error: " + str(candidate(17, 27))      '
+  - input: '0, 1'
+    output: '0, "1st edge test error: " + str(candidate(0, 1))'
+  - input: '0, 0'
+    output: '0, "2nd edge test error: " + str(candidate(0, 0))'
+difficulty: unclassified

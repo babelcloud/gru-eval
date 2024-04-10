@@ -1,0 +1,31 @@
+taskId: 00150-simple-prime-check
+target: |-
+  A simple program which should return the value of x if n is 
+      a prime number and should return the value of y otherwise.
+
+      Examples:
+      for x_or_y(7, 34, 12) == 34
+      for x_or_y(15, 8, 5) == 5
+examples: []
+tests:
+  - input: '7, 34, 12'
+    output: '34'
+  - input: '15, 8, 5'
+    output: '5'
+  - input: '3, 33, 5212'
+    output: '33'
+  - input: '1259, 3, 52'
+    output: '3'
+  - input: '7919, -1, 12'
+    output: '-1'
+  - input: '3609, 1245, 583'
+    output: '583'
+  - input: '91, 56, 129'
+    output: '129'
+  - input: '6, 34, 1234'
+    output: '1234'
+  - input: '1, 2, 0'
+    output: '0'
+  - input: '2, 2, 0'
+    output: '2'
+difficulty: unclassified

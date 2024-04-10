@@ -1,0 +1,18 @@
+taskId: 00009-rolling-max-comments
+target: >-
+  From a given list of integers, generate a list of rolling maximum element
+  found until given moment
+      in the sequence.
+examples:
+  - usageExample: 'rolling_max([1, 2, 3, 2, 3, 4, 2])'
+    output: '[1, 2, 3, 3, 3, 4, 4]'
+tests:
+  - input: '[]'
+    output: '[]'
+  - input: '[1, 2, 3, 4]'
+    output: '[1, 2, 3, 4]'
+  - input: '[4, 3, 2, 1]'
+    output: '[4, 4, 4, 4]'
+  - input: '[3, 2, 3, 100, 3]'
+    output: '[3, 3, 3, 100, 100]'
+difficulty: unclassified

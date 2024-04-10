@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "gru-eval": "deno run --allow-all ./main.ts"
+  }
+}

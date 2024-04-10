@@ -1,0 +1,29 @@
+taskId: 00036-appearances-divisible-seven
+target: >-
+  Return the number of times the digit 7 appears in integers less than n which
+  are divisible by 11 or 13.
+examples:
+  - usageExample: fizz_buzz(50)
+    output: '0'
+  - usageExample: fizz_buzz(78)
+    output: '2'
+  - usageExample: fizz_buzz(79)
+    output: '3'
+tests:
+  - input: '50'
+    output: '0'
+  - input: '78'
+    output: '2'
+  - input: '79'
+    output: '3'
+  - input: '100'
+    output: '3'
+  - input: '200'
+    output: '6'
+  - input: '4000'
+    output: '192'
+  - input: '10000'
+    output: '639'
+  - input: '100000'
+    output: '8026'
+difficulty: unclassified

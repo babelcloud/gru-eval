@@ -1,0 +1,23 @@
+taskId: 00134-last-char-letter-bool
+tests:
+  - input: '"apple"'
+    output: 'False'
+  - input: '"apple pi e"'
+    output: 'True'
+  - input: '"eeeee"'
+    output: 'False'
+  - input: '"A"'
+    output: 'True'
+  - input: '"Pumpkin pie "'
+    output: 'False'
+  - input: '"Pumpkin pie 1"'
+    output: 'False'
+  - input: '""'
+    output: 'False'
+  - input: '"eeeee e "'
+    output: 'False'
+  - input: '"apple pie"'
+    output: 'False'
+  - input: '"apple pi e "'
+    output: 'False'
+difficulty: unclassified

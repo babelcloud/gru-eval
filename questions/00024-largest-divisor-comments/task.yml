@@ -1,0 +1,19 @@
+taskId: 00024-largest-divisor-comments
+target: >-
+  For a given number n, find the largest number that divides n evenly, smaller
+  than n
+examples:
+  - usageExample: largest_divisor(15)
+    output: '5'
+tests:
+  - input: '3'
+    output: '1'
+  - input: '7'
+    output: '1'
+  - input: '10'
+    output: '5'
+  - input: '100'
+    output: '50'
+  - input: '49'
+    output: '7'
+difficulty: unclassified

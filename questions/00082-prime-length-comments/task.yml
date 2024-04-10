@@ -1,0 +1,44 @@
+taskId: 00082-prime-length-comments
+target: |-
+  Write a function that takes a string and returns True if the string
+      length is a prime number or False otherwise
+      Examples
+      prime_length('Hello') == True
+      prime_length('abcdcba') == True
+      prime_length('kittens') == True
+      prime_length('orange') == False
+examples: []
+tests:
+  - input: '''Hello'''
+    output: 'True'
+  - input: '''abcdcba'''
+    output: 'True'
+  - input: '''kittens'''
+    output: 'True'
+  - input: '''orange'''
+    output: 'False'
+  - input: '''wow'''
+    output: 'True'
+  - input: '''world'''
+    output: 'True'
+  - input: '''MadaM'''
+    output: 'True'
+  - input: '''Wow'''
+    output: 'True'
+  - input: ''''''
+    output: 'False'
+  - input: '''HI'''
+    output: 'True'
+  - input: '''go'''
+    output: 'True'
+  - input: '''gogo'''
+    output: 'False'
+  - input: '''aaaaaaaaaaaaaaa'''
+    output: 'False'
+  - input: '''Madam'''
+    output: 'True'
+  - input: '''M'''
+    output: 'False'
+  - input: '''0'''
+    output: 'False'
+difficulty: unclassified

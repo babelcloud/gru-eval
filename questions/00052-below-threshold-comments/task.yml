@@ -1,0 +1,9 @@
+taskId: 00052-below-threshold-comments
+target: Return True if all numbers in the list l are below threshold t.
+examples:
+  - usageExample: 'below_threshold([1, 2, 4, 10], 100)'
+    output: 'True'
+  - usageExample: 'below_threshold([1, 20, 4, 10], 5)'
+    output: 'False'
+tests: []
+difficulty: unclassified

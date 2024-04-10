@@ -1,0 +1,26 @@
+taskId: 00017-musical-notes-beats-list
+target: >-
+  Input to this function is a string representing musical notes in a special
+  ASCII format.
+      Your task is to parse this string and return list of integers corresponding to how many beats does each
+      not last.
+
+      Here is a legend:
+      'o' - whole note, lasts four beats
+      'o|' - half note, lasts two beats
+      '.|' - quater note, lasts one beat
+examples:
+  - usageExample: parse_music('o o| .| o| o| .| .| .| .| o o')
+    output: '[4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]'
+tests:
+  - input: ''''''
+    output: '[]'
+  - input: '''o o o o'''
+    output: '[4, 4, 4, 4]'
+  - input: '''.| .| .| .|'''
+    output: '[1, 1, 1, 1]'
+  - input: '''o| o| .| .| o o o o'''
+    output: '[2, 2, 1, 1, 4, 4, 4, 4]'
+  - input: '''o| .| o| .| o o| o o|'''
+    output: '[2, 1, 2, 1, 4, 2, 4, 2]'
+difficulty: unclassified
