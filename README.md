@@ -48,7 +48,15 @@ Options:
 
 
 ## 题目列表 && 测试结果
-TODO
+### 校对指南
+1. 待校对的问题都在 questions 里面
+2. 到 dataset/HumanEval-0407.jsonl 中找到对应的问题编号的问题
+3. 查看 code.py 和 code.ts 是否和 dataset 中 `prompt` 字段一致
+4. 查看 task.yml 中的 `example` 字段是否和 dataset 中 `prompt` 字段中的例子一致
+5. 查看 task.yml 中的 `tests` 字段是否和 dataset 中 `test` 字段中表述的条件一致
+
+### 已校对问题
+- 00000-close-elements-detection
 
 ## 未完成任务
 - 用 Listr 提供更细节的运行信息
