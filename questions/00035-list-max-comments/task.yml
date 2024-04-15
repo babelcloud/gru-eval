@@ -1,0 +1,39 @@
+id: 00035-list-max-comments
+question:
+  typescript: |
+    
+    function maxElement(l: number[]): number {
+        // Return maximum element in the list.
+        // >>> maxElement([1, 2, 3])
+        // 3
+        // >>> maxElement([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+        // 123
+        // (content here will be replaced with TypeScript logic)
+    }
+  python: |
+    
+
+    def max_element(l: list):
+        """Return maximum element in the list.
+        >>> max_element([1, 2, 3])
+        3
+        >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+        123
+        """
+test:
+  typescript: |
+    
+    function check(candidate: (arr: number[]) => number): void {
+        // Content of the function remains in comments below
+        /*
+        assert candidate([1, 2, 3]) == 3
+        assert candidate([5, 3, -5, 2, -3, 3, 9, 0, 124, 1, -10]) == 124
+        */
+    }
+  python: |
+    
+
+    def check(candidate):
+        assert candidate([1, 2, 3]) == 3
+        assert candidate([5, 3, -5, 2, -3, 3, 9, 0, 124, 1, -10]) == 124
+difficulty: unclassified

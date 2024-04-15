@@ -1,9 +1,0 @@
-taskId: 00034-sorted-unique-list
-target: Return sorted unique elements in a list
-examples:
-  - usageExample: 'unique([5, 3, 5, 2, 3, 3, 9, 0, 123])'
-    output: '[0, 2, 3, 5, 9, 123]'
-tests:
-  - input: '[5, 3, 5, 2, 3, 3, 9, 0, 123]'
-    output: '[0, 2, 3, 5, 9, 123]'
-difficulty: unclassified

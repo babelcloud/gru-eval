@@ -2,6 +2,7 @@ import * as yaml from "https://cdn.skypack.dev/yaml";
 import { ApiFactory } from "./src/api.ts";
 import { waitUntil } from "./src/utils.ts";
 import { program, Option } from "npm:commander@12.0.0";
+import esprima from "npm:esprima@4.0.1";
 import cliProgress from "npm:cli-progress@3.4.0";
 import colors from "npm:ansi-colors@4.1.1";
 import {
@@ -105,7 +106,8 @@ let passedQCount = 0;
 for (const target of targetQ) {
   const q = questions.get(target);
   if (q) {
-    const msg = await buildMsg(`questions/${q}`);
+    const task = yaml.parse(await Deno.readTextFile(`questions/${q}` + "/task.yml"));
+    const msg = await buildMsg(task);
     // explain: https://stackoverflow.com/a/38189405
     curJob = await invokeGru(q + Math.random().toString(36).substr(2, 4), msg);
     // 替换 waitUntil
@@ -126,11 +128,13 @@ for (const target of targetQ) {
     );
 
     // TODO 如果没有通过，自动在 gru-eval 项目创建 issue
+
+    // gru 认为结果是否成功
     if (curJob.reason !== "SUCCESS") {
       await Deno.writeTextFile(
         `${reportDir}/${q}.yaml`,
         yaml.stringify({
-          passed: false,
+          passedByGru: false,
           job: curJob,
           plan: await api.getPlan(curJob.id),
         })!
@@ -138,10 +142,15 @@ for (const target of targetQ) {
       failedQ.push(q);
       bar.increment(1, { failed: failedQ.length });
     } else {
+      // 实际是否成功
+      const curPlan = await api.getPlan(curJob.id);
+      const verify = await verifyGru(getNewestTsCode(curPlan), task.test.typescript)!
       await Deno.writeTextFile(
         `${reportDir}/${q}.yaml`,
         yaml.stringify({
-          passed: true,
+          passedByGru: true,
+          passedTruly: verify.res,
+          verifyGruLog: verify.log,
           job: curJob,
           plan: await api.getPlan(curJob.id),
         })!
@@ -155,6 +164,49 @@ for (const target of targetQ) {
 
 clearInterval(flushIntervalId);
 
+function getNewestTsCode(plan: any) {
+  return [...plan[0].tasks[0].steps].reverse().find((step: any) => step.name === "runTypescript").args.code;
+}
+
+async function verifyGru(code: string, test: string) {
+  let functionName = "";
+  esprima.tokenize(code).forEach((token: any) => {
+    if (token.type === "Identifier" && functionName === "") {
+      functionName = token.value;
+    }
+  });
+
+  const encoder = new TextEncoder();
+  const data = encoder.encode(`
+  import { expect } from "https://deno.land/x/expect/mod.ts";
+
+  ${code}
+
+  ${test}
+
+  check(${functionName});
+  `);
+  const tempFile = await Deno.makeTempFile({ suffix: ".ts" });
+  await Deno.writeFile(tempFile, data);
+
+  // 运行临时文件
+  const process = Deno.run({
+    cmd: ["deno", "run", tempFile],
+    stdout: "piped",
+    stderr: "piped"
+  })
+
+  // 读取标准输出
+const rawOutput = await process.output();
+const output = new TextDecoder().decode(rawOutput);
+
+// 读取标准错误输出
+const rawError = await process.stderrOutput();
+const error = new TextDecoder().decode(rawError);
+  await Deno.remove(tempFile);
+  return {res: (await process.status()).success, log: output + error};
+}
+
 function retrieveAllQuestions(dirPath: string): string[] {
   const fileNames: string[] = [];
   for (const dirEntry of Deno.readDirSync(dirPath)) {
@@ -163,18 +215,16 @@ function retrieveAllQuestions(dirPath: string): string[] {
   return fileNames;
 }
 
-async function buildMsg(questionPath: string) {
-  const code = await Deno.readTextFile(questionPath + "/code.ts");
-  const task = yaml.parse(await Deno.readTextFile(questionPath + "/task.yml"));
+function buildMsg(task: any) {
 
   return `
   I have the following TypeScript problem, please help me solve it and make sure that the test samples I give you later passes.
   \`\`\`typescript
-  ${code}
+  ${task.question.typescript}
   \`\`\`
   ## test samples
   \`\`\`yaml
-  ${yaml.stringify(task.tests)}
+  ${yaml.stringify(task.test.typescript)}
   \`\`\`
   `;
 }

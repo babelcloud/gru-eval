@@ -1,0 +1,38 @@
+id: 00028-string-concat-comments
+question:
+  typescript: |
+    
+    function concatenate(strings: string[]): string {
+        // Concatenate list of strings into a single string
+        // >>> concatenate([])
+        // ''
+        // >>> concatenate(['a', 'b', 'c'])
+        // 'abc'
+    }
+  python: |
+    from typing import List
+
+
+    def concatenate(strings: List[str]) -> str:
+        """ Concatenate list of strings into a single string
+        >>> concatenate([])
+        ''
+        >>> concatenate(['a', 'b', 'c'])
+        'abc'
+        """
+test:
+  typescript: |
+    
+    function check(candidate: (arr: string[]) => string): void {
+        // assert candidate([]) == ''
+        // assert candidate(['x', 'y', 'z']) == 'xyz'
+        // assert candidate(['x', 'y', 'z', 'w', 'k']) == 'xyzwk'
+    }
+  python: |
+    
+
+    def check(candidate):
+        assert candidate([]) == ''
+        assert candidate(['x', 'y', 'z']) == 'xyz'
+        assert candidate(['x', 'y', 'z', 'w', 'k']) == 'xyzwk'
+difficulty: unclassified
