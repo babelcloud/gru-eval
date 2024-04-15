@@ -1,0 +1,39 @@
+id: 00056-bracket-validation-comments
+question:
+  typescript: ""
+  python: >
+
+
+    def correct_bracketing(brackets: str):
+        """ brackets is a string of "<" and ">".
+        return True if every opening bracket has a corresponding closing bracket.
+
+        >>> correct_bracketing("<")
+        False
+        >>> correct_bracketing("<>")
+        True
+        >>> correct_bracketing("<<><>>")
+        True
+        >>> correct_bracketing("><<>")
+        False
+        """
+test:
+  typescript: ""
+  python: |+
+
+
+    def check(candidate):
+        assert candidate("<>")
+        assert candidate("<<><>>")
+        assert candidate("<><><<><>><>")
+        assert candidate("<><><<<><><>><>><<><><<>>>")
+        assert not candidate("<<<><>>>>")
+        assert not candidate("><<>")
+        assert not candidate("<")
+        assert not candidate("<<<<")
+        assert not candidate(">")
+        assert not candidate("<<>")
+        assert not candidate("<><><<><>><>><<>")
+        assert not candidate("<><><<><>><>>><>")
+
+difficulty: unclassified

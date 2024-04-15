@@ -1,0 +1,31 @@
+id: 00034-sorted-unique-elements
+question:
+  typescript: |
+    
+    function unique(l: any[]): any[] {
+        // Return sorted unique elements in a list
+        // >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])
+        // [0, 2, 3, 5, 9, 123]
+        // (The function implementation goes here)
+    }
+  python: |
+    
+
+    def unique(l: list):
+        """Return sorted unique elements in a list
+        >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])
+        [0, 2, 3, 5, 9, 123]
+        """
+test:
+  typescript: >
+    
+    function check(candidate: (arr: number[]) => number[]): void {
+        // assert candidate([5, 3, 5, 2, 3, 3, 9, 0, 123]) == [0, 2, 3, 5, 9, 123]
+    }
+  python: |+
+    
+
+    def check(candidate):
+        assert candidate([5, 3, 5, 2, 3, 3, 9, 0, 123]) == [0, 2, 3, 5, 9, 123]
+
+difficulty: unclassified

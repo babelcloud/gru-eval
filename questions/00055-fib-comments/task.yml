@@ -1,0 +1,46 @@
+id: 00055-fib-comments
+question:
+  typescript: |
+    
+    function fib(n: number): number {
+        // Return n-th Fibonacci number.
+        // >>> fib(10)
+        // 55
+        // >>> fib(1)
+        // 1
+        // >>> fib(8)
+        // 21
+    }
+  python: |
+    
+
+    def fib(n: int):
+        """Return n-th Fibonacci number.
+        >>> fib(10)
+        55
+        >>> fib(1)
+        1
+        >>> fib(8)
+        21
+        """
+test:
+  typescript: |
+    
+    function check(candidate: (val: number) => number): void {
+        // assert candidate(10) == 55
+        // assert candidate(1) == 1
+        // assert candidate(8) == 21
+        // assert candidate(11) == 89
+        // assert candidate(12) == 144
+    }
+  python: |+
+    
+
+    def check(candidate):
+        assert candidate(10) == 55
+        assert candidate(1) == 1
+        assert candidate(8) == 21
+        assert candidate(11) == 89
+        assert candidate(12) == 144
+
+difficulty: unclassified

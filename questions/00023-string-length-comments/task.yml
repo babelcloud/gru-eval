@@ -1,0 +1,23 @@
+id: 00023-string-length-comments
+question:
+  typescript: ""
+  python: |
+
+
+    def strlen(string: str) -> int:
+        """ Return length of given string
+        >>> strlen('')
+        0
+        >>> strlen('abc')
+        3
+        """
+test:
+  typescript: ""
+  python: |
+
+
+    def check(candidate):
+        assert candidate('') == 0
+        assert candidate('x') == 1
+        assert candidate('asdasnakj') == 9
+difficulty: unclassified

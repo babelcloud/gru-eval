@@ -1,35 +1,38 @@
-taskId: 00039-prime-fib-comments
-target: prime_fib returns n-th number that is a Fibonacci number and it's also prime.
-examples:
-  - usageExample: prime_fib(1)
-    output: '2'
-  - usageExample: prime_fib(2)
-    output: '3'
-  - usageExample: prime_fib(3)
-    output: '5'
-  - usageExample: prime_fib(4)
-    output: '13'
-  - usageExample: prime_fib(5)
-    output: '89'
-tests:
-  - input: '1'
-    output: '2'
-  - input: '2'
-    output: '3'
-  - input: '3'
-    output: '5'
-  - input: '4'
-    output: '13'
-  - input: '5'
-    output: '89'
-  - input: '6'
-    output: '233'
-  - input: '7'
-    output: '1597'
-  - input: '8'
-    output: '28657'
-  - input: '9'
-    output: '514229'
-  - input: '10'
-    output: '433494437'
+id: 00039-prime-fib-comments
+question:
+  typescript: ""
+  python: >
+
+
+    def prime_fib(n: int):
+        """
+        prime_fib returns n-th number that is a Fibonacci number and it's also prime.
+        >>> prime_fib(1)
+        2
+        >>> prime_fib(2)
+        3
+        >>> prime_fib(3)
+        5
+        >>> prime_fib(4)
+        13
+        >>> prime_fib(5)
+        89
+        """
+test:
+  typescript: ""
+  python: |+
+
+
+    def check(candidate):
+        assert candidate(1) == 2
+        assert candidate(2) == 3
+        assert candidate(3) == 5
+        assert candidate(4) == 13
+        assert candidate(5) == 89
+        assert candidate(6) == 233
+        assert candidate(7) == 1597
+        assert candidate(8) == 28657
+        assert candidate(9) == 514229
+        assert candidate(10) == 433494437
+
 difficulty: unclassified

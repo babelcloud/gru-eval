@@ -1,19 +1,23 @@
-taskId: 00024-largest-divisor-comments
-target: >-
-  For a given number n, find the largest number that divides n evenly, smaller
-  than n
-examples:
-  - usageExample: largest_divisor(15)
-    output: '5'
-tests:
-  - input: '3'
-    output: '1'
-  - input: '7'
-    output: '1'
-  - input: '10'
-    output: '5'
-  - input: '100'
-    output: '50'
-  - input: '49'
-    output: '7'
+id: 00024-largest-divisor-comments
+question:
+  typescript: ""
+  python: >
+
+
+    def largest_divisor(n: int) -> int:
+        """ For a given number n, find the largest number that divides n evenly, smaller than n
+        >>> largest_divisor(15)
+        5
+        """
+test:
+  typescript: ""
+  python: |
+
+
+    def check(candidate):
+        assert candidate(3) == 1
+        assert candidate(7) == 1
+        assert candidate(10) == 5
+        assert candidate(100) == 50
+        assert candidate(49) == 7
 difficulty: unclassified

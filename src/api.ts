@@ -63,7 +63,7 @@ export function ApiFactory(env: string) {
           },
           body: JSON.stringify({
             title: name,
-            target: "guru",
+            target: "gru",
             source: "babel",
             options: { delayOnCached: 0, useCache: true },
             namespaceId: nsId,
